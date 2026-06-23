@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faizan Malek : Software Developer</title>
+<meta name="description" content="Faizan Malek, software developer in Moncton, New Brunswick. I build full stack web applications with React, NestJS, and PostgreSQL.">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=sentient@400,500,600&f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f8f9;
+    --ink: #14181d;
+    --ink-soft: #4a525c;
+    --ink-faint: #818a94;
+    --accent: #2c6e6a;
+    --line: #dde3e6;
+    --maxw: 740px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Switzer", system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a { color: inherit; }
+
+  /* Top bar */
+  .topbar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 32px 0 0;
+    gap: 16px;
+  }
+  .mark {
+    font-family: "Sentient", Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .mark .dot { color: var(--accent); }
+  .place {
+    font-size: 14px;
+    color: var(--ink-faint);
+    text-align: right;
+    letter-spacing: 0.02em;
+  }
+  .topnav {
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  .topnav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .topnav a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Sections */
+  .hero { padding-top: 76px; }
+
+  h1 {
+    font-family: "Sentient", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(34px, 6.5vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    max-width: 14ch;
+  }
+
+  .lede {
+    margin-top: 28px;
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  .lede strong { color: var(--ink); font-weight: 600; }
+
+  .contact-row {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 16px;
+  }
+  .contact-row a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
+    transition: text-decoration-color 0.15s, color 0.15s;
+  }
+  .contact-row a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+  .rule {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 72px 0;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+
+  h2 {
+    font-family: "Sentient", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(26px, 4vw, 34px);
+    line-height: 1.18;
+    letter-spacing: -0.005em;
+  }
+
+  h3 {
+    font-family: "Sentient", Georgia, serif;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  p + p { margin-top: 18px; }
+  .body-text { color: var(--ink-soft); }
+  .body-text strong { color: var(--ink); font-weight: 600; }
+
+  /* Metadata strip */
+  .meta {
+    margin: 26px 0 30px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .meta div {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .meta div:nth-child(odd) { padding-right: 18px; }
+  .meta div:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--line); }
+  .meta div:nth-last-child(1),
+  .meta div:nth-last-child(2) { border-bottom: 0; }
+  .meta dt {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 3px;
+  }
+  .meta dd { font-size: 16px; color: var(--ink); }
+
+  .pill {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--ink-faint);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 16px;
+    letter-spacing: 0.02em;
+  }
+  a.pill {
+    color: var(--accent);
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  a.pill:hover { border-color: var(--accent); }
+
+  /* Work list */
+  .work-item {
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+  .work-item:first-of-type { border-top: 0; }
+  .work-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .work-tag { font-size: 14px; color: var(--ink-faint); }
+  .work-item p { margin-top: 8px; color: var(--ink-soft); font-size: 17px; }
+  .work-item .link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
+  }
+  .work-item .link:hover { text-decoration-color: var(--accent); }
+  .work-item .soon { color: var(--ink-faint); font-size: 15px; margin-top: 10px; display: inline-block; }
+
+  /* Project showcase */
+  .shot {
+    margin: 32px 0 0;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .shot-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    background: #edf1f2;
+  }
+  .shot-bar i {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: #ccd4d8;
+    display: inline-block;
+  }
+  .shot-bar .addr {
+    margin-left: 10px;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .shot-bar .cap {
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+  }
+  .shot img { display: block; width: 100%; height: auto; }
+  .shot .fallback {
+    padding: 56px 22px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  /* Standout call to action */
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    letter-spacing: 0.01em;
+    transition: background 0.15s;
+  }
+  .cta:hover { background: #225754; }
+  .cta .arrow { transition: transform 0.15s; }
+  .cta:hover .arrow { transform: translateX(3px); }
+  .ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .ghost:hover { color: var(--accent); border-color: var(--accent); }
+
+  .readout {
+    margin-top: 24px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: #edf1f2;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .readout b { color: var(--ink); font-weight: 600; }
+
+  /* Skills */
+  .skill-group { margin-top: 24px; }
+  .skill-group:first-of-type { margin-top: 8px; }
+  .skill-group h3 { margin-bottom: 6px; }
+  .skill-group p { color: var(--ink-soft); font-size: 17px; }
+
+  /* Footer */
+  footer {
+    margin-top: 80px;
+    padding: 34px 0 56px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  footer a {
+    color: var(--ink-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
+  }
+  footer a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 22px; }
+    .meta { grid-template-columns: 1fr; }
+    .meta div:nth-child(even) { padding-left: 0; border-left: 0; }
+    .meta div:nth-child(odd) { padding-right: 0; }
+    .meta div { border-bottom: 1px solid var(--line); }
+    .meta div:nth-last-child(1) { border-bottom: 0; }
+    .rule { margin: 56px 0; }
+    .hero { padding-top: 56px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <div>
+      <a class="mark" href="/">Faizan Malek<span class="dot">.</span></a>
+      <div class="topnav"><a href="https://faizanmalek.github.io/gameDesign">Game design portfolio &rarr;</a></div>
+    </div>
+    <div class="place">Moncton, New Brunswick</div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1>I build software that holds up in production.</h1>
+      <p class="lede">
+        I am a full stack web developer. I just shipped <strong>CommonGround</strong>, a production donation platform used by a coalition of more than 28 community organizations in Greater Moncton. My team also won first place at <strong>Hack4Change 2026</strong>, against 15 other teams in a 48 hour sprint, with the prototype that became the foundation for that project.
+      </p>
+      <div class="contact-row">
+        <a href="mailto:malekfaizanmahedi@gmail.com">malekfaizanmahedi@gmail.com</a>
+        <a href="https://www.linkedin.com/in/faizan-malek-502b23352/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/FaizanMalek" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="commonground">
+      <p class="eyebrow">Featured project</p>
+      <h2>CommonGround</h2>
+
+      <figure class="shot">
+        <div class="shot-bar"><i></i><i></i><i></i><span class="addr">commonground-plxr.onrender.com</span></div>
+        <img src="assets/commonground.png" alt="CommonGround Community Needs Board, listing donation needs across Greater Moncton organizations" loading="lazy">
+      </figure>
+
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Developer on the build team</dd></div>
+        <div><dt>Stack</dt><dd>React, NestJS, PostgreSQL, Docker</dd></div>
+        <div><dt>Status</dt><dd>In active development</dd></div>
+        <div><dt>Team</dt><dd>Hackathon lead, then build team</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+        <div><dt>Impact</dt><dd>28+ partner organizations</dd></div>
+      </dl>
+      <p class="body-text">
+        Community organizations in Greater Moncton were each running donations on their own, with no shared way to route a gift to the group that needed it most. CommonGround gives a coalition of more than 28 organizations one place to receive and coordinate donations, so a single contribution can reach the right partner instead of stalling in a silo.
+      </p>
+      <p class="body-text">
+        I led the team that built the original prototype during the Hack4Change sprint, then joined the build team to turn it into something real. The platform runs on a <strong>React</strong> front end and a <strong>NestJS</strong> API backed by <strong>PostgreSQL</strong>, with the whole stack containerized in <strong>Docker</strong> so it deploys the same way every time. The work now is the unglamorous part that matters: data integrity, clear roles and permissions, and an interface that volunteers can use without training.
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="https://commonground-plxr.onrender.com/" target="_blank" rel="noopener">Visit the live platform <span class="arrow">&rarr;</span></a>
+        <a class="ghost" href="https://github.com/FaizanMalek/commonGround" target="_blank" rel="noopener">Source on GitHub</a>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="zone-occupancy">
+      <p class="eyebrow">Selected project</p>
+      <h2>Zone Occupancy Detector</h2>
+
+      <figure class="shot">
+        <div class="shot-bar"><span class="cap">YOLOv8 on a real parking lot: occupied zones in red with confidence, free zones in green</span></div>
+        <img src="assets/zone-occupancy.jpg" alt="Aerial parking lot with 15 marked zones, occupied spaces outlined in red with detection confidence, free spaces in green, and a status panel reading 12 occupied, 3 free, 80 percent occupancy" loading="lazy">
+      </figure>
+
+      <div class="readout">Zones: <b>15</b>&nbsp;&nbsp; Occupied: <b>12</b>&nbsp;&nbsp; Free: <b>3</b>&nbsp;&nbsp; Occupancy: <b>80%</b>&nbsp;&nbsp; Mean detection confidence: <b>0.71</b></div>
+
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Solo build</dd></div>
+        <div><dt>Stack</dt><dd>Python, YOLOv8, OpenCV, NumPy</dd></div>
+        <div><dt>Domain</dt><dd>Computer vision</dd></div>
+        <div><dt>Focus</dt><dd>Reliability measurement</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+        <div><dt>Tests</dt><dd>15 deterministic unit tests</dd></div>
+      </dl>
+      <p class="body-text">
+        A fixed camera computer vision system that decides whether each zone in a scene is occupied, then measures how reliably it does so against hand labelled ground truth. The reference application is parking lot occupancy, where zones are parking spaces and objects are vehicles, but the engine is deliberately generic. Any fixed camera "is this region occupied or clear?" problem maps onto it: lane and bay monitoring, equipment in position checks, or target zone status on a range. The detection model is swappable; the part I take seriously is the dependability of the verdict, not just a convincing demo.
+      </p>
+      <p class="body-text">
+        Modern detectors find common objects well, so "can the model see a car?" is not the interesting question. The interesting one is how often the verdict is right. I treat each occupied or free call as a binary classification per zone and score it against ground truth: <strong>precision, recall, F1, a confusion matrix, a precision recall curve, Average Precision, and a full threshold sweep</strong>. Detection sits behind an interface, so the decision logic and metrics run deterministically against a mock detector with no model, GPU, or network, which keeps correctness provable in CI. Overlap is computed analytically by clipping each zone polygon against the detection box (Sutherland to Hodgman) and measuring area with the shoelace formula, avoiding the rounding bias of a rasterized mask.
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="https://github.com/FaizanMalek/zone-occupancy-detector" target="_blank" rel="noopener">View source on GitHub <span class="arrow">&rarr;</span></a>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="work">
+      <p class="eyebrow">More work</p>
+
+      <div class="work-item">
+        <div class="work-head">
+          <h3>AuraFarmer</h3>
+          <span class="work-tag">Full stack app</span>
+        </div>
+        <p>A live ranking app that tracks the internet's verdict on public figures. I built it end to end: the data model, a searchable leaderboard with rising and falling movers, voting, and a news feed alongside each figure.</p>
+        <figure class="shot">
+          <div class="shot-bar"><i></i><i></i><i></i><span class="addr">aurafarmer.live</span></div>
+          <img src="assets/aurafarmer.png" alt="AuraFarmer leaderboard ranking public figures by weekly score, with rising and falling movers and a news panel" loading="lazy">
+        </figure>
+        <div class="cta-row">
+          <a class="cta" href="https://www.aurafarmer.live/" target="_blank" rel="noopener">Visit the live site <span class="arrow">&rarr;</span></a>
+          <a class="ghost" href="https://github.com/FaizanMalek/AuraFarmerLive" target="_blank" rel="noopener">Source on GitHub</a>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-head">
+          <h3>Coursework and personal projects</h3>
+          <span class="work-tag">Smaller builds</span>
+        </div>
+        <p>A set of smaller programs I wrote to learn by doing: a playable chess game, tic tac toe, and other projects from my NBCC coursework. Each one was an excuse to get a specific idea right, from game state and rules to clean input handling.</p>
+      </div>
+
+      <div class="work-item">
+        <div class="work-head">
+          <h3>Game design portfolio</h3>
+          <span class="work-tag">Separate body of work</span>
+        </div>
+        <p>Side practice in casino game math and design, kept separate from my development work.</p>
+        <a class="link" href="https://faizanmalek.github.io/gameDesign">View the game design portfolio</a>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="skills">
+      <p class="eyebrow">Skills</p>
+      <h2>What I work with</h2>
+
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <p>I write JavaScript and TypeScript day to day, and reach for Python when a script or a data task calls for it. I am comfortable in SQL, and I write HTML and CSS by hand rather than leaning on a framework to hide them.</p>
+      </div>
+
+      <div class="skill-group">
+        <h3>Frameworks and runtimes</h3>
+        <p>React on the front end. On the back end I use Node with NestJS, which gives me a clear structure for controllers, services, and modules as an API grows.</p>
+      </div>
+
+      <div class="skill-group">
+        <h3>Databases and tools</h3>
+        <p>PostgreSQL for relational data, with attention to schema design and constraints rather than treating the database as a plain store. I use Docker to keep environments consistent, and Git for everything I work on.</p>
+      </div>
+
+      <div class="skill-group">
+        <h3>Working style</h3>
+        <p>I read the existing code before I add to it, I write down the decisions I make so the next person is not guessing, and I would rather ship something small that works than something large that almost does.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="about">
+      <p class="eyebrow">About</p>
+      <h2>A bit of background</h2>
+      <p class="body-text" style="margin-top:22px;">
+        I trained as an engineer first. I hold a degree in Electronics and Communication Engineering from MSU India (2017 to 2021), where I graduated with distinction, and I am now finishing an IT Software Development diploma at NBCC Moncton with a 3.6 GPA. Math has always been part of how I think: my background runs through probability and statistics, and I took first place twice at the state level Mathematics Olympiad.
+      </p>
+      <p class="body-text">
+        I learn quickly and I write documentation that other people can actually follow. I stay calm when something breaks, which is usually when the real work happens. I am open to building production software in any domain, and I care more about getting the fundamentals right than about chasing whatever is fashionable this year.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>Faizan Malek, 2026</div>
+    <div class="foot-links">
+      <a href="mailto:malekfaizanmahedi@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/faizan-malek-502b23352/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/FaizanMalek" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
