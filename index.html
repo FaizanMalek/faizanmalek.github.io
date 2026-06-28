@@ -6,6 +6,7 @@
 <title>Faizan Malek : Software Developer</title>
 <meta name="description" content="Faizan Malek, software developer in Moncton, New Brunswick. I build full stack web applications with React, NestJS, and PostgreSQL.">
 <meta name="theme-color" content="#f6f8f9">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Faizan Malek : Software Developer">
 <meta property="og:description" content="Full stack web developer in Moncton, New Brunswick. I build production web applications with React, NestJS, and PostgreSQL.">
@@ -50,6 +51,14 @@
   }
 
   a { color: inherit; }
+  a:focus-visible, .cta:focus-visible, .ghost:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
 
   /* Top bar */
   .topbar {
