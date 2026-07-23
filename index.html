@@ -388,7 +388,7 @@
     <section class="hero">
       <h1>I build software that holds up in production.</h1>
       <p class="lede">
-        I am a full stack web developer. I just shipped <strong>CommonGround</strong>, a production donation platform used by a coalition of more than 28 community organizations in Greater Moncton. My team also won first place at <strong>Hack4Change 2026</strong>, against 15 other teams in a 48 hour sprint, with the prototype that became the foundation for that project.
+        I am a full stack web developer. I just shipped <strong>CommonGround</strong>, a production donation platform used by a coalition of more than 28 community organizations in Greater Moncton. My team also won first place at <strong>Hack4Change 2026</strong>, against 15 other teams in a 48 hour sprint, with the prototype that became the foundation for that project. More recently I built and deployed <strong>an AI document assistant on Azure</strong> that answers from source documents with citations and refuses when it is not sure.
       </p>
       <div class="contact-row">
         <a href="mailto:malekfaizanmahedi@gmail.com">malekfaizanmahedi@gmail.com</a>
@@ -425,6 +425,40 @@
       <div class="cta-row">
         <a class="cta" href="https://commonground-plxr.onrender.com/" target="_blank" rel="noopener">Visit the live platform <span class="arrow">&rarr;</span></a>
         <a class="ghost" href="https://github.com/FaizanMalek/commonGround" target="_blank" rel="noopener">Source on GitHub</a>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="insurance-assistant">
+      <p class="eyebrow">Featured project</p>
+      <h2>Insurance Document Assistant</h2>
+
+      <figure class="shot">
+        <div class="shot-bar"><i></i><i></i><i></i><span class="addr">insurance-ai-assist.streamlit.app</span></div>
+        <img src="assets/insuranceassistant.png" alt="Insurance Document Assistant answering a question with citations to the exact source document and page" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <div class="fallback" style="display:none">A live, retrieval-augmented document assistant.<br>Try it at insurance-ai-assist.streamlit.app</div>
+      </figure>
+
+      <div class="readout">Model: <b>gpt-5-mini</b>&nbsp;&nbsp; Retrieval: <b>Azure AI Search</b>&nbsp;&nbsp; Groundedness: <b>91%</b>&nbsp;&nbsp; Correctness: <b>91%</b>&nbsp;&nbsp; Evaluation: <b>LLM-as-judge</b></div>
+
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Solo build</dd></div>
+        <div><dt>Stack</dt><dd>Azure AI Foundry, Azure AI Search, Python, FastAPI, Streamlit</dd></div>
+        <div><dt>Domain</dt><dd>Applied AI, retrieval-augmented generation</dd></div>
+        <div><dt>Focus</dt><dd>Grounded answers with citations</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+        <div><dt>Deployed</dt><dd>Live on Streamlit Cloud</dd></div>
+      </dl>
+      <p class="body-text">
+        A retrieval-augmented assistant that answers questions about a set of insurance documents. It reads the documents, finds the passages that matter, and answers using only those, citing the exact file and page for every claim. When the documents do not cover a question, it says so rather than guessing, which is the behaviour you need before anyone can trust an answer in a regulated setting.
+      </p>
+      <p class="body-text">
+        The pipeline runs on <strong>Azure AI Foundry</strong> and <strong>Azure AI Search</strong>: I chunk and embed the documents, store the vectors in a search index, retrieve the closest passages for a question, and have <strong>gpt-5-mini</strong> answer from that context. I did not stop at "it works." I wrote an <strong>LLM-as-judge evaluation harness</strong> that scores every answer for groundedness and correctness, and when the first numbers looked wrong I found the fault was in my evaluation rather than the model, fixed it, and the score climbed. I also rebuilt the same assistant as a no-code <strong>Copilot Studio</strong> agent grounded on SharePoint, so I have worked with both the custom and the low-code approaches and can say where each one fits.
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="https://insurance-ai-assist.streamlit.app/" target="_blank" rel="noopener">Try the live app <span class="arrow">&rarr;</span></a>
+        <a class="ghost" href="https://github.com/FaizanMalek/insurance-doc-assistant" target="_blank" rel="noopener">Source on GitHub</a>
       </div>
     </section>
 
